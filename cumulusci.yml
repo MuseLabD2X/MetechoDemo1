@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.61.1'
+project:
+    name: MetechoDemo1
+    package:
+        name: MetechoDemo1
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/MetechoDemo1/tests
+            options:
+                outputdir: robot/MetechoDemo1/results
+
+    robot_testdoc:
+        options:
+            path: robot/MetechoDemo1/tests
+            output: robot/MetechoDemo1/doc/MetechoDemo1_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
